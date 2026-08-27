@@ -1,0 +1,519 @@
+:root{
+    --font1: #E5E5E5;
+    --font2: #F8F9FA;
+    --font3: #495057;
+    --border: #F8F9FA;
+    --darkback: #212529;
+    --font4: #C4C4C4;
+    --hover: #DDBEA9;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(Poppins-Light.ttf);
+}
+html::-webkit-scrollbar{
+    width: 0px;
+}
+body{
+    font-family: Poppins, sans-serif;
+    text-decoration: none;
+    margin: 0;
+    overflow-x: hidden;
+}
+/*navigációs sáv kialakítása dizájn*/
+header{
+    position: absolute ;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    justify-content: space-around;
+}
+.logo{
+    text-decoration: none;
+    color: var(--font1);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.logo span{
+    color: var(--hover);
+}
+nav a {
+    text-decoration: none;
+    color: var(--font2);
+    opacity: 0.5;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 25px;
+}
+nav a:hover{
+    opacity: 1;
+    border-bottom: 2px solid var(--hover);
+}
+nav a ~ a{
+    margin-left: 1em;
+}
+/* slide */
+.news{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+}
+.new{
+    animation: slide  20s infinite linear;
+    display: flex;
+    width: 100%;
+}
+.content{
+    width: 100%;
+    min-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.datas{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 100px;
+    padding-left: 100px;
+}
+.content:nth-of-type(1){
+    background-image: url("slide.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.content:nth-of-type(2){
+    background-image: url("slide2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.content:nth-of-type(3){
+    background-image: url("slide3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.content:nth-of-type(4){
+    background-image: url("slide4.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.content:nth-of-type(5){
+    background-image: url("slide5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+@keyframes slide{
+    0% {transform: translateX(0);}
+    25% {transform: translateX(0);}
+    30% {transform: translateX(-100%);}
+    55% {transform: translateX(-100%);}
+    60% {transform: translateX(-200%);}
+    85% {transform: translateX(-200%);}
+    90% {transform: translateX(-300%);}
+    100% {transform: translateX(-300%);}
+}
+.date{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--font1)
+}
+.content h3{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 40px;
+    color: var(--border);
+    max-width: 605px;
+}
+.content p{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--font1);
+    max-width: 400px;
+}
+.content .page{
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    color: var(--font1);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+}
+.content .page hr{
+    width: 44px;
+    color: var(--border);
+    display: inline-block;
+    margin: 0;
+}
+/* Categories, bList */
+.categories #card, .bList #card{
+    box-sizing: border-box;
+    padding: 1em;
+}
+.categories .img img{
+    max-height: 250px;
+    min-height: 250px;
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.bList .img img{
+    max-height: 200px;
+    min-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.categories .img, .bList .img{
+    position: relative;
+}
+.categories .img span, .bList .img span{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--border);
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 20px;
+    background-color: rgba(33, 37, 41, 0.3);
+    padding: 2px 9px;
+    border-radius: 2px;
+}
+.cat_data span, .cat_data p, .bList span, .bList p{
+    color: var(--font3);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.cat_data hr, .bList hr{
+    color: var(--font1);
+    margin: 15px 0;
+    opacity: 0.3;
+}
+.cat_data h3{
+    color: var(--darkback);
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 700;
+}
+.row, .cat-top, .bList-top{
+    width: 75%;
+}
+.bList-top{
+    margin-bottom: 50px;
+}
+.categories, .bList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bList{
+    margin-top: 60px;
+}
+.cat-top{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.cat-top h3, .cat-top .btn button{
+    color: var(--font3);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 25px;
+}
+.bList-top h3{
+    color: var(--font3);
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 20px;
+}
+.cat-top .btn button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.cat-top .btn button ~ button{
+    margin-left: 1em;
+} 
+.cat-top .btn .inactive{
+    opacity: 0.5;
+}
+.allcat{
+    background-color: var(--darkback);
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: 400;
+    color: var(--border);
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em 4em;
+    cursor: pointer;
+    margin: 60px 0;
+}
+
+/*Topics*/
+
+.topics{
+    display: flex;
+}
+.left, .right{
+    width: 50%;
+}
+.right{
+    background-image: url(topic.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    background-color: var(--darkback);
+    padding: 80px 90px;
+}
+.left h2{
+    font-size: 25px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--border);
+    margin-bottom: 40px;
+}
+.tops{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.tops .top{
+    display: flex;
+    gap: 30px;
+}
+.tops .top img{
+    height: 181px;
+    width: 181px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.tops .top span{
+    color: var(--font1);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.tops .top h4{
+    color: var(--font2);
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+.tops .top p{
+    color: var(--font1);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.right h4{
+    color: var(--border);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 40px;
+    max-width: 393px;
+    text-align: center;
+}
+.right p{
+    color: var(--font1);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    max-width: 393px;
+    text-align: center;
+}
+/*Footer*/
+footer{
+    padding: 90px 60px;
+    background-color: var(--darkback);
+    margin-top: 60px;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px
+}
+.footer .ftop, .footer .fbottom{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.footer .ftop a ~ a{
+    margin-left: 10px;
+}
+.footer .ftop a{
+    text-decoration: none;
+    color: var(--border);
+    opacity: 0.5;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 25px;
+}
+.footer hr{
+    width: 100%;
+    color: var(--font1);
+    opacity: 0.2;
+}
+.footer .fbottom span{
+    color: var(--border);
+    opacity: 0.5;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+/*scroll*/
+.reveal{
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  .reveal.act{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+/*reszponziv*/
+@media only screen and (max-width: 1280px) {
+    .categories .img img, .bList .img img{
+        max-height: 150px;
+        min-height: 150px;
+    }
+    .cat_data h3, .bList_data h3{
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .cat_data span, .cat_data p, .bList span, .bList p, .tops .top span, .tops .top p{
+        font-size: 10px;
+    }
+    .row, .cat-top, .bList-top{
+        width: 90%;
+    }
+    .left{
+        padding: 40px 30px;
+    }
+    .tops .top img{
+        height: 120px;
+        width: 120px;
+    }
+    .tops .top h4{
+        font-size: 15px;
+        margin: 5px 0;
+    }
+    .tops .top span{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .categories .img img, .bList .img img{
+        max-height: 100px;
+        min-height: 100px;
+    }
+    .cat_data h3, .bList_data h3{
+        font-size: 10px;
+        line-height: 20px;
+    }
+    .cat_data span, .cat_data p, .bList span, .bList p, .tops .top span, .tops .top p{
+        font-size: 8px;
+    }
+    .left{
+        padding: 30px 20px;
+    }
+    .tops .top img{
+        height: 100px;
+        width: 100px;
+    }
+    .tops .top h4{
+        font-size: 10px;
+        margin: 5px 0;
+    }
+    .tops .top span{
+        font-size: 8px;
+    }
+    .right h4{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .date{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .content h3{
+        font-size: 20px;
+        line-height: 25px;
+        max-width: 400px;
+    }
+    .content p{
+        font-size: 10px;
+        line-height: 15px;
+        max-width: 350px;
+    }
+    .datas{
+        padding-bottom: 25px;
+        padding-left: 25px;
+    }
+    .news{
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 300px;
+    }
+    .content{
+        width: 100%;
+        min-width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .footer .ftop a, .footer .fbottom span{
+        font-size: 10px;
+        line-height: 20px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .left{
+        width: 100%;
+    }
+    .right{
+        display: none;
+    }
+    .footer .ftop a, .footer .fbottom span{
+        font-size: 8px;
+        line-height: 15px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .cat-top .btn{
+        display: none;
+    }
+}
